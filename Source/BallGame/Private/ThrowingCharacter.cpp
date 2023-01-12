@@ -111,7 +111,9 @@ void AThrowingCharacter::ShootBall()
 	// Apply an impulse to the ball so it is thrown away by the physics system
 	BallMesh->AddImpulse(GetWorld()->GetFirstPlayerController()->PlayerCameraManager->GetActorForwardVector() * ShootingStrength);
 	
-	// Ball variable now stores nullptr because we are not holding the ball anymore
+	// Ball variable now stores nullptr because we are not holding the ball anymore                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 	Ball = nullptr;
+
+	Ball->bWasShot = true;
 	
 }
