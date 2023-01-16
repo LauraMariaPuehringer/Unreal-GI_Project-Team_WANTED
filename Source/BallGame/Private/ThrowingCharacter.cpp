@@ -112,8 +112,11 @@ void AThrowingCharacter::ShootBall()
 	BallMesh->AddImpulse(GetWorld()->GetFirstPlayerController()->PlayerCameraManager->GetActorForwardVector() * ShootingStrength);
 	
 	// Ball variable now stores nullptr because we are not holding the ball anymore                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
-	Ball = nullptr;
+	
 
 	Ball->bWasShot = true;
+	Ball = nullptr;
+
+	OnBallShot.Broadcast();
 	
 }
