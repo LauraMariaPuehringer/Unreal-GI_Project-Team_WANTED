@@ -36,7 +36,7 @@ void AThrowingCharacter::Tick(float DeltaTime)
 		ShootingStrength = ForceMultiplier * ShootingTime;
 
 		// Fire the event so that we can use it to update
-		ShootingStrengthUpdated(MaxShootingTime);
+		ShootingStrengthUpdated(ShootingTime);
 	}
 
 	if (Billboard != nullptr && PhysicsHandle != nullptr)
@@ -77,6 +77,7 @@ void AThrowingCharacter::StopShootBall()
 	bIsShooting = false; 
 	ShootingTime = 0.0f;
 	ShootingStrength = 0; 
+	ShootingStrengthUpdated(ShootingTime);
 }
 
 void AThrowingCharacter::SpawnAndGrabBall()
